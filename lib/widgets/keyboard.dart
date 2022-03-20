@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quordle_app/models/keyboard_model.dart';
-import 'package:flutter_quordle_app/widgets/keyboard_button.dart';
+import 'package:flutter_quordle_app/widgets/keyboard_letter_button.dart';
+import 'package:flutter_quordle_app/widgets/keyboard_special_button.dart';
 
 class Keyboard extends StatelessWidget {
   final KeyboardModel keyboard;
@@ -15,38 +16,40 @@ class Keyboard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
-              KeyboardButton(letter: keyboard.letters['Q']),
-              KeyboardButton(letter: keyboard.letters['W']),
-              KeyboardButton(letter: keyboard.letters['E']),
-              KeyboardButton(letter: keyboard.letters['R']),
-              KeyboardButton(letter: keyboard.letters['T']),
-              KeyboardButton(letter: keyboard.letters['Y']),
-              KeyboardButton(letter: keyboard.letters['U']),
-              KeyboardButton(letter: keyboard.letters['I']),
-              KeyboardButton(letter: keyboard.letters['O']),
-              KeyboardButton(letter: keyboard.letters['P']),
+              KeyboardLetterButton(keyboard.buttons['Q']),
+              KeyboardLetterButton(keyboard.buttons['W']),
+              KeyboardLetterButton(keyboard.buttons['E']),
+              KeyboardLetterButton(keyboard.buttons['R']),
+              KeyboardLetterButton(keyboard.buttons['T']),
+              KeyboardLetterButton(keyboard.buttons['Y']),
+              KeyboardLetterButton(keyboard.buttons['U']),
+              KeyboardLetterButton(keyboard.buttons['I']),
+              KeyboardLetterButton(keyboard.buttons['O']),
+              KeyboardLetterButton(keyboard.buttons['P']),
             ]),
             Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
-              KeyboardButton(letter: keyboard.letters['A']),
-              KeyboardButton(letter: keyboard.letters['S']),
-              KeyboardButton(letter: keyboard.letters['D']),
-              KeyboardButton(letter: keyboard.letters['F']),
-              KeyboardButton(letter: keyboard.letters['G']),
-              KeyboardButton(letter: keyboard.letters['H']),
-              KeyboardButton(letter: keyboard.letters['J']),
-              KeyboardButton(letter: keyboard.letters['K']),
-              KeyboardButton(letter: keyboard.letters['L']),
+              KeyboardLetterButton(keyboard.buttons['A']),
+              KeyboardLetterButton(keyboard.buttons['S']),
+              KeyboardLetterButton(keyboard.buttons['D']),
+              KeyboardLetterButton(keyboard.buttons['F']),
+              KeyboardLetterButton(keyboard.buttons['G']),
+              KeyboardLetterButton(keyboard.buttons['H']),
+              KeyboardLetterButton(keyboard.buttons['J']),
+              KeyboardLetterButton(keyboard.buttons['K']),
+              KeyboardLetterButton(keyboard.buttons['L']),
             ]),
             Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
-              const KeyboardButton(buttonType: KeyboardButtonType.enter),
-              KeyboardButton(letter: keyboard.letters['Z']),
-              KeyboardButton(letter: keyboard.letters['X']),
-              KeyboardButton(letter: keyboard.letters['C']),
-              KeyboardButton(letter: keyboard.letters['V']),
-              KeyboardButton(letter: keyboard.letters['B']),
-              KeyboardButton(letter: keyboard.letters['N']),
-              KeyboardButton(letter: keyboard.letters['M']),
-              const KeyboardButton(buttonType: KeyboardButtonType.remove),
+              const KeyboardSpecialButton(
+                  buttonType: KeyboardSpecialButtonType.enter),
+              KeyboardLetterButton(keyboard.buttons['Z']),
+              KeyboardLetterButton(keyboard.buttons['X']),
+              KeyboardLetterButton(keyboard.buttons['C']),
+              KeyboardLetterButton(keyboard.buttons['V']),
+              KeyboardLetterButton(keyboard.buttons['B']),
+              KeyboardLetterButton(keyboard.buttons['N']),
+              KeyboardLetterButton(keyboard.buttons['M']),
+              const KeyboardSpecialButton(
+                  buttonType: KeyboardSpecialButtonType.remove),
             ]),
           ]),
     ]);

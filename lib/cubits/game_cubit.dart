@@ -9,20 +9,15 @@ import 'package:flutter_quordle_app/widgets/show_alert_window.dart';
 //todo: at the end remove _field from here?
 class GameCubit extends Cubit<GameCubitState> {
   late GameModel _game;
-  //late FieldModel _field;
 
   GameCubit() : super(GameInitState()) {
-    //_field = FieldModel.start();
     _game = GameModel.start();
-    emit(GameGenericState(
-        //field: _field,
-        game: _game));
+    emit(GameGenericState(game: _game));
   }
 
   void addLetter(LetterModel letter) {
     for (FieldModel field in _game.fields.values) {
-      field.addLetter(
-          letter); //todo: is it actually updated or not when iterated like this?
+      field.addLetter(letter);
     }
     emit(GameGenericState(game: _game));
   }

@@ -69,11 +69,14 @@ class GameModel {
     //todo: check if the word is valid here?
 
     for (FieldModel field in fields.values) {
-      field.submitWord();
+      field.checkWord();
     }
 
-    keyboard
-        .updateKeyboard(fields[0]!.words); //todo: adapt keyboard to 4 inputs!
+    keyboard.updateKeyboard(fields); //todo: adapt keyboard to 4 inputs!
+
+    for (FieldModel field in fields.values) {
+      field.nextMove();
+    }
 
     _updateGameResult();
   }

@@ -66,14 +66,16 @@ class FieldModel {
 
   //todo: make sure some checks are at the game level!
   //todo: current word should be passed!
-  void submitWord() {
+  void checkWord() {
     //todo: maybe remove checking is the current word is completed, as the same goes in the game model!
     if (fieldResult != FieldState.active || isCurrentWordComplete == false) {
       return;
     }
 
     words[activeWordIndex]!.check(winnerWord.toString());
+  }
 
+  void nextMove() {
     if (isWon == true) {
       fieldResult = FieldState.won;
       return;
